@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style1.css">
+
+    <script>
+        function validate(event) {
+            event.preventDefault();
+            var form = document.getElementById('f');
+            var un = form.username.value;
+            var pas = form.password.value;
+            if (un === "Admin" && pas === "Admin") {
+                alert("Login Successful!!");
+                localStorage.setItem("username", un);
+                location.href = "home.html";
+            } else {
+                alert("Invalid username or password");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <h1>Login:</h1>
+        <form id="f" onsubmit="validate(event)">
+            <label for="username">Username:*</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required />
+            <br />
+            <label for="password">Password:*</label>
+            <input type="password" id="password" name="password" placeholder="Enter your Password" required />
+            <br />
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <br>
+</body>
+
+</html>
